@@ -85,7 +85,7 @@ class Login extends Component {
                         >
                             <Text>登錄</Text>
                         </Button>
-                        <Button block bordered
+                        <Button bordered light
                                 style={styles.btnReg}
                                 onPress={() => this.props.navigation.navigate("Home")}
                         >

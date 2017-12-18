@@ -66,6 +66,7 @@ export default {
     },
 
     txt: {
+        width: deviceWidth - 120,
         textAlign: "center",
         color: "#2EB5AC",
 

@@ -7,20 +7,23 @@ import Login from "./screens/login/";
 import About from "./screens/about/";
 import FAQ from "./screens/faq/";
 
-import Service from "./screens/service/stepOne";
+import ServiceStepOne from "./screens/service/stepOne";
+import ServiceStepTwo from "./screens/service/stepTwo";
 
 
 
 const Drawer = DrawerNavigator(
     {
         Home: {screen: Login},
-        Service: {screen: Service},
+
         About: {screen: About},
         FAQ: {screen: FAQ},
+        ServiceStepOne: {screen: ServiceStepOne},
+        ServiceStepTwo: {screen: ServiceStepTwo},
 
     },
     {
-        initialRouteName: "Home",
+        initialRouteName: "ServiceStepTwo",
         contentOptions: {
             activeTintColor: "#e91e63"
         },
@@ -31,7 +34,7 @@ const Drawer = DrawerNavigator(
 const AppNavigator = StackNavigator(
     {
         Drawer: {screen: Drawer},
-
+        ServiceStepTwo: {screen: ServiceStepTwo},
     },
     {
         initialRouteName: "Drawer",
