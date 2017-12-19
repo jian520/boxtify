@@ -65,98 +65,294 @@ export default class StepOne extends Component {
 
                         <Col style={{
                             marginLeft: 20,
-                            marginRight: 10, marginBottom: 10, borderWidth: 1, borderColor: "#999999"
+                            marginRight: 10, marginBottom: 10,
+                            // borderWidth: 1, borderColor: "#999999"
                         }}
                         >
+                            <View style={{borderWidth: 1, borderColor: "#999999"}}>
+                                <Image source={require("../../../assets/servicecate1.png")}
+                                       style={styles.img}
+                                />
 
-                            <Image source={require("../../../assets/servicecate1.png")}
-                                   style={styles.img}
-                            />
-
-                            <H2 style={styles.h2}>文件箱</H2>
-                            <Text style={styles.txt}>每箱每月$29</Text>
+                                <H2 style={styles.h2}>文件箱</H2>
+                                <Text style={styles.txt}>每箱每月$29</Text>
 
 
-                            <Row style={{
-                                alignItems: "center"
-
-                            }}>
-                                <Col size={1} style={{ }}>
-
-                                    <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
-                                        <H3 style={{color: "#fff"}}>-</H3>
-                                    </Button>
-
-                                </Col>
-                                <Col size={2.5} style={{ }}>
-                                    <View style={{
-                                        flex: 1,
-                                        flexDirection: 'column',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        backgroundColor: "#866447"
-                                    }}>
-                                        <H3 style={{
-
-                                            alignSelf: "center",
-                                            color: "#fff"
-                                        }}>0</H3>
-                                    </View>
-
-                                </Col>
-                                <Col size={1} style={{ }}>
-                                    <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
-                                        <H3 style={{color: "#fff"}}>+</H3>
-                                    </Button>
-                                </Col>
-                            </Row>
+                                <Row style={{height: 40, alignItems: "center"}}>
+                                    <Col size={1} style={{}}>
+                                        <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
+                                            <H3 style={{color: "#fff"}}>-</H3>
+                                        </Button>
+                                    </Col>
+                                    <Col size={2.5} style={{}}>
+                                        <View style={{
+                                            flex: 1,
+                                            flexDirection: 'column',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            backgroundColor: "#866447"
+                                        }}>
+                                            <H3 style={{
+                                                alignSelf: "center",
+                                                color: "#fff"
+                                            }}>0</H3>
+                                        </View>
+                                    </Col>
+                                    <Col size={1} style={{}}>
+                                        <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
+                                            <H3 style={{color: "#fff"}}>+</H3>
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </View>
 
 
                         </Col>
 
-                        <Col>
-                            <View style={{marginLeft: 10, marginRight: 20, borderWidth: 1, borderColor: "#2EB5AC"}}>
+                        <Col style={{
+                            marginLeft: 10,
+                            marginRight: 20, marginBottom: 10
+                        }}
+                        >
+                            <View style={{borderWidth: 1, borderColor: "#999999"}}>
+
                                 <Image source={require("../../../assets/servicecate2.png")}
                                        style={styles.img}
                                 />
 
                                 <H2 style={styles.h2}>標準儲物箱</H2>
                                 <Text style={styles.txt}>每箱每月$49</Text>
+                                <Row style={{height: 40, alignItems: "center"}}>
+                                    <Col size={1} style={{}}>
+                                        <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
+                                            <H3 style={{color: "#fff"}}>-</H3>
+                                        </Button>
+                                    </Col>
+                                    <Col size={2.5} style={{}}>
+                                        <View style={{
+                                            flex: 1,
+                                            flexDirection: 'column',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            backgroundColor: "#866447"
+                                        }}>
+                                            <H3 style={{
+                                                alignSelf: "center",
+                                                color: "#fff"
+                                            }}>0</H3>
+                                        </View>
+                                    </Col>
+                                    <Col size={1} style={{}}>
+                                        <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
+                                            <H3 style={{color: "#fff"}}>+</H3>
+                                        </Button>
+                                    </Col>
+                                </Row>
                             </View>
+
+
                         </Col>
                     </Row>
 
-                    <Row>
-                        <Col>
-                            <View style={{marginLeft: 20, marginRight: 10, borderWidth: 1, borderColor: "#2EB5AC"}}>
 
-                                <Image source={require("../../../assets/servicecate3.png")}
-                                       style={{alignSelf: 'center'}}/>
-                                <H2 style={styles.h2}>大型物品</H2>
-                                <Text style={styles.txt}>每件每月$69</Text>
-                            </View>
-                        </Col>
 
-                        <Col>
-                            <View style={{marginLeft: 10, marginRight: 20, borderWidth: 1, borderColor: "#2EB5AC"}}>
+                    <Row style={{flex: 1,
+                        marginTop:20,
 
-                                <Image source={require("../../../assets/servicecate4.png")}
-                                       style={{alignSelf: 'center'}}/>
-                                <H2 style={styles.h2}>掛衣箱</H2>
-                                <Text style={styles.txt}>每箱每月$89</Text>
-                            </View>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <View style={{
-                            height: 40,
+                    }}>
+
+                        <Col style={{flex: 1,
+
                             marginLeft: 20,
-                            marginRight: 20,
-                            borderWidth: 1,
-                            borderColor: "#2EB5AC"
-                        }}>
-                            <H2 style={{alignSelf: 'center'}}>儲存月費預算</H2>
-                        </View>
+                            marginRight: 10, marginBottom: 10,
+                            // borderWidth: 1, borderColor: "#999999"
+                        }}
+                        >
+                            <View style={{borderWidth: 1, borderColor: "#999999"}}>
+                                <Image source={require("../../../assets/servicecate1.png")}
+                                       style={styles.img}
+                                />
+
+                                <H2 style={styles.h2}>文件箱</H2>
+                                <Text style={styles.txt}>每箱每月$29</Text>
+
+
+                                <Row style={{height: 40, alignItems: "center"}}>
+                                    <Col size={1} style={{}}>
+                                        <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
+                                            <H3 style={{color: "#fff"}}>-</H3>
+                                        </Button>
+                                    </Col>
+                                    <Col size={2.5} style={{}}>
+                                        <View style={{
+                                            flex: 1,
+                                            flexDirection: 'column',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            backgroundColor: "#866447"
+                                        }}>
+                                            <H3 style={{
+                                                alignSelf: "center",
+                                                color: "#fff"
+                                            }}>0</H3>
+                                        </View>
+                                    </Col>
+                                    <Col size={1} style={{}}>
+                                        <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
+                                            <H3 style={{color: "#fff"}}>+</H3>
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </View>
+
+
+                        </Col>
+
+                        <Col style={{
+                            marginLeft: 10,
+                            marginRight: 20, marginBottom: 10
+                        }}
+                        >
+                            <View style={{borderWidth: 1, borderColor: "#999999"}}>
+
+                                <Image source={require("../../../assets/servicecate2.png")}
+                                       style={styles.img}
+                                />
+
+                                <H2 style={styles.h2}>標準儲物箱</H2>
+                                <Text style={styles.txt}>每箱每月$49</Text>
+                                <Row style={{height: 40, alignItems: "center"}}>
+                                    <Col size={1} style={{}}>
+                                        <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
+                                            <H3 style={{color: "#fff"}}>-</H3>
+                                        </Button>
+                                    </Col>
+                                    <Col size={2.5} style={{}}>
+                                        <View style={{
+                                            flex: 1,
+                                            flexDirection: 'column',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            backgroundColor: "#866447"
+                                        }}>
+                                            <H3 style={{
+                                                alignSelf: "center",
+                                                color: "#fff"
+                                            }}>0</H3>
+                                        </View>
+                                    </Col>
+                                    <Col size={1} style={{}}>
+                                        <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
+                                            <H3 style={{color: "#fff"}}>+</H3>
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </View>
+
+
+                        </Col>
+                    </Row>
+
+
+
+                    {/*<Row  >*/}
+                        {/*<Col style={{*/}
+                            {/*marginTop: 10,*/}
+                            {/*marginLeft: 20,*/}
+                            {/*marginRight: 10, marginBottom: 10,*/}
+                            {/*// borderWidth: 1, borderColor: "#999999"*/}
+                        {/*}}*/}
+                        {/*>*/}
+                            {/*<View style={{borderWidth: 1, borderColor: "#999999"}}>*/}
+
+
+                                {/*<Image source={require("../../../assets/servicecate3.png")}*/}
+                                       {/*style={{alignSelf: 'center'}}/>*/}
+                                {/*<H2 style={styles.h2}>大型物品</H2>*/}
+                                {/*<Text style={styles.txt}>每件每月$69</Text>*/}
+                                {/*<Row style={{alignItems: "center"}}>*/}
+                                    {/*<Col size={1} style={{}}>*/}
+                                        {/*<Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>*/}
+                                            {/*<H3 style={{color: "#fff"}}>-</H3>*/}
+                                        {/*</Button>*/}
+                                    {/*</Col>*/}
+                                    {/*<Col size={2.5} style={{}}>*/}
+                                        {/*<View style={{*/}
+                                            {/*flex: 1,*/}
+                                            {/*flexDirection: 'column',*/}
+                                            {/*justifyContent: 'center',*/}
+                                            {/*alignItems: 'center',*/}
+                                            {/*backgroundColor: "#866447"*/}
+                                        {/*}}>*/}
+                                            {/*<H3 style={{*/}
+                                                {/*alignSelf: "center",*/}
+                                                {/*color: "#fff"*/}
+                                            {/*}}>0</H3>*/}
+                                        {/*</View>*/}
+                                    {/*</Col>*/}
+                                    {/*<Col size={1} style={{}}>*/}
+                                        {/*<Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>*/}
+                                            {/*<H3 style={{color: "#fff"}}>+</H3>*/}
+                                        {/*</Button>*/}
+                                    {/*</Col>*/}
+                                {/*</Row>*/}
+                            {/*</View>*/}
+
+                        {/*</Col>*/}
+
+                        {/*<Col>*/}
+                            {/*<View style={{borderWidth: 1, borderColor: "#999999"}}>*/}
+
+
+                                {/*<Image source={require("../../../assets/servicecate4.png")}*/}
+                                       {/*style={{alignSelf: 'center'}}/>*/}
+                                {/*<H2 style={styles.h2}>掛衣箱</H2>*/}
+                                {/*<Text style={styles.txt}>每箱每月$89</Text>*/}
+                                {/*<Row style={{alignItems: "center"}}>*/}
+                                    {/*<Col size={1} style={{}}>*/}
+                                        {/*<Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>*/}
+                                            {/*<H3 style={{color: "#fff"}}>-</H3>*/}
+                                        {/*</Button>*/}
+                                    {/*</Col>*/}
+                                    {/*<Col size={2.5} style={{}}>*/}
+                                        {/*<View style={{*/}
+                                            {/*flex: 1,*/}
+                                            {/*flexDirection: 'column',*/}
+                                            {/*justifyContent: 'center',*/}
+                                            {/*alignItems: 'center',*/}
+                                            {/*backgroundColor: "#866447"*/}
+                                        {/*}}>*/}
+                                            {/*<H3 style={{*/}
+                                                {/*alignSelf: "center",*/}
+                                                {/*color: "#fff"*/}
+                                            {/*}}>0</H3>*/}
+                                        {/*</View>*/}
+                                    {/*</Col>*/}
+                                    {/*<Col size={1} style={{}}>*/}
+                                        {/*<Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>*/}
+                                            {/*<H3 style={{color: "#fff"}}>+</H3>*/}
+                                        {/*</Button>*/}
+                                    {/*</Col>*/}
+                                {/*</Row>*/}
+                            {/*</View>*/}
+
+
+                        {/*</Col>*/}
+                    {/*</Row>*/}
+
+
+                    <Row>
+                    {/*<View style={{*/}
+                    {/*height: 40,*/}
+                    {/*marginLeft: 20,*/}
+                    {/*marginRight: 20,*/}
+                    {/*borderWidth: 1,*/}
+                    {/*borderColor: "#2EB5AC"*/}
+                    {/*}}>*/}
+                    {/*<H2 style={{alignSelf: 'center'}}>儲存月費預算</H2>*/}
+                    {/*</View>*/}
+                    <Col>
+                    </Col>
 
 
                     </Row>
