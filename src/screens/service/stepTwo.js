@@ -304,6 +304,7 @@ export default class StepOne extends Component {
                     // alignItems: 'center',
                     // backgroundColor: "#866447"
                 }}>
+
                     <H3 style={{ flex:1, height: 40,
                         backgroundColor: "#866447",
 

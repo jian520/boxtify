@@ -9,6 +9,7 @@ import FAQ from "./screens/faq/";
 
 import ServiceStepOne from "./screens/service/stepOne";
 import ServiceStepTwo from "./screens/service/stepTwo";
+import ServiceStepThree from "./screens/service/stepThree";
 
 
 
@@ -20,10 +21,12 @@ const Drawer = DrawerNavigator(
         FAQ: {screen: FAQ},
         ServiceStepOne: {screen: ServiceStepOne},
         ServiceStepTwo: {screen: ServiceStepTwo},
+        ServiceStepThree: {screen: ServiceStepThree},
+
 
     },
     {
-        initialRouteName: "ServiceStepTwo",
+        initialRouteName: "ServiceStepThree",
         contentOptions: {
             activeTintColor: "#e91e63"
         },
