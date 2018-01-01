@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Image, StyleSheet, StatusBar} from "react-native";
-
+import DatePicker from 'react-native-datepicker'
 import {
     Container,
     Content,
@@ -10,19 +10,46 @@ import {
     Icon,
     Left,
     Right,
-    Body, Text, H2, View, H3, Form, Item, Input, Picker,
+    Body, Text, H2, View, H3, Form, Item, Input, Picker, CheckBox, ListItem,
 } from "native-base";
 import {Grid, Row, Col} from "react-native-easy-grid";
-
 const Item2 = Picker.Item;
 export default class StepOne extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
-            selected1: "key0",
-            selected2: "key0"
+            checkbox1: false,
+            checkbox2: false,
+            checkbox3: false,
+            checkbox4: false,
+            //date:"2016-05-15"
         };
+    }
+
+
+
+    toggleSwitch1() {
+        this.setState({
+            checkbox1: !this.state.checkbox1
+        });
+    }
+
+    toggleSwitch2() {
+        this.setState({
+            checkbox2: !this.state.checkbox2
+        });
+    }
+
+    toggleSwitch3() {
+        this.setState({
+            checkbox3: !this.state.checkbox3
+        });
+    }
+
+    toggleSwitch4() {
+        this.setState({
+            checkbox4: !this.state.checkbox4
+        });
     }
 
     onValueChange(value: string) {
@@ -31,13 +58,6 @@ export default class StepOne extends Component {
         });
     }
 
-    onValueChange2(value: string) {
-        this.setState({
-            selected2: value
-
-
-        });
-    }
 
     render() {
         return (
@@ -54,8 +74,8 @@ export default class StepOne extends Component {
                     <Title>預約時間</Title>
                     </Body>
                     <Right>
-                        <Button transparent onPress={() => this.props.navigation.navigate("ServiceStepFour")}>
-                            <Title>下一步</Title>
+                        <Button transparent onPress={() => alert('abc')}>
+                            <Title>確定預約</Title>
                         </Button>
                     </Right>
                 </Header>
@@ -63,7 +83,7 @@ export default class StepOne extends Component {
                 <Content>
 
                     {/*<View style={{height: 40, backgroundColor: "#2EB5AC"}}>*/}
-                    <Image source={require("../../../assets/serviceheader3.png")}
+                    <Image source={require("../../../assets/serviceheader4.png")}
                            style={styles.img}
                     />
                     {/*</View>*/}
@@ -101,14 +121,15 @@ export default class StepOne extends Component {
                         }}
                         >
                             <Text style={{
-                                    color: "#2EB5AC"
-                                }}
+                                color: "#2EB5AC"
+                            }}
                             >儲存計劃</Text>
                         </Row>
                         <Row
                             style={{
                                 marginLeft: 10,
-                                height: 20}}
+                                height: 20
+                            }}
                         >
                             <Text style={{color: "#999999"}}>1個 標準儲物箱</Text>
                             <Text style={{color: "#999999"}}>$ 49</Text>
@@ -118,7 +139,8 @@ export default class StepOne extends Component {
 
 
                                 marginLeft: 10,
-                                height: 20}}
+                                height: 20
+                            }}
                         >
                             <Text style={{color: "#999999"}}>1個 標準儲物箱</Text>
                             <Text style={{color: "#999999"}}>$ 49</Text>
@@ -126,10 +148,10 @@ export default class StepOne extends Component {
 
                         <Row style={{
                             borderWidth: 1, borderColor: "#999999",
-                            marginTop:10,
-                           // marginLeft: 10,
+                            marginTop: 10,
+                            // marginLeft: 10,
                             //marginRight: 10,
-                            marginBottom:10,
+                            marginBottom: 10,
                         }}
                         >
 
@@ -141,9 +163,9 @@ export default class StepOne extends Component {
                                 <Text style={{color: "#fff"}}>(不包括任何折扣)</Text>
                             </Col>
                             <Col style={{
-                                alignItems:"center"
+                                alignItems: "center"
                             }}>
-                                <H3 style={{flex:1, color: "#2EB5AC", }}>$ 49</H3>
+                                <H3 style={{flex: 1, color: "#2EB5AC",}}>$ 49</H3>
                             </Col>
 
                         </Row>
@@ -157,59 +179,97 @@ export default class StepOne extends Component {
                             <Text style={{color: "#999999"}}>首個月費週期由收取物品翌日開始計算</Text>
                         </Row>
 
+
+                        <ListItem button onPress={() => this.toggleSwitch1()}>
+                            <CheckBox
+                                checked={this.state.checkbox1}
+                                onPress={() => this.toggleSwitch1()}
+                            />
+                            <Body>
+                            <Text>我居住的大廈需要經樓梯出入</Text>
+                            </Body>
+                        </ListItem>
+                        <ListItem button onPress={() => this.toggleSwitch2()}>
+                            <CheckBox
+
+                                checked={this.state.checkbox2}
+                                onPress={() => this.toggleSwitch2()}
+                            />
+                            <Body>
+                            <Text>我需要儲存大型家私如梳化、床褥或餐臺等</Text>
+                            </Body>
+                        </ListItem>
+                        <ListItem button onPress={() => this.toggleSwitch3()}>
+                            <CheckBox
+
+                                checked={this.state.checkbox3}
+                                onPress={() => this.toggleSwitch3()}
+                            />
+                            <Body>
+                            <Text>我需要boxtify即場替儲存物品拍照記錄</Text>
+                            </Body>
+                        </ListItem>
+
+                        <ListItem button onPress={() => this.toggleSwitch4()}>
+                            <CheckBox
+
+                                checked={this.state.checkbox4}
+                                onPress={() => this.toggleSwitch4()}
+                            />
+                            <Body>
+                            <Text>我有物品需要卸載</Text>
+                            </Body>
+                        </ListItem>
+
+
                         <View style={{
-                            borderWidth: 1, borderColor: "#999999",
                             marginLeft: 30,
                             marginRight: 30, marginBottom: 20,
                         }}>
 
-                            <Row style={{marginTop:20, marginBottom:10, alignSelf: "center"}}>
-                                <H3 style={{color:"#87634B"}}>請填寫以下資料</H3>
+                            <Row style={{marginTop: 20, marginBottom: 10, alignSelf: "center"}}>
+                                <H3 style={{color: "#87634B"}}>預約時間</H3>
                             </Row>
 
                             <Form>
-                                <Text style={{color: "#2EB5AC"}}>個人資料</Text>
-                                <Input style={styles.input} placeholder={"姓名"}/>
-                                <Input style={styles.input} placeholder={"聯絡電話"}/>
-                                <Text style={{color: "#2EB5AC"}}>運送地址</Text>
-                                <Input style={styles.input} placeholder={"地址(第一行)"}/>
-                                <Input style={styles.input} placeholder={"地址(第二行)"}/>
-                            </Form>
-
-
-                            <Col>
+                                <Text style={{color: "#2EB5AC"}}>收取物品並存倉</Text>
+                                <DatePicker
+                                    style={{width: 200}}
+                                    date={this.state.date}
+                                    mode="date"
+                                    placeholder="請選擇日子"
+                                    format="YYYY-MM-DD"
+                                    // minDate="2016-05-01"
+                                    // maxDate="2016-06-01"
+                                    confirmBtnText="Confirm"
+                                    cancelBtnText="Cancel"
+                                    customStyles={{
+                                        dateIcon: {
+                                            position: 'absolute',
+                                            left: 0,
+                                            top: 4,
+                                            marginLeft: 0
+                                        },
+                                        dateInput: {
+                                            marginLeft: 36
+                                        }
+                                        // ... You can check the source to find the other keys.
+                                    }}
+                                    onDateChange={(date) => {this.setState({date: date})}}
+                                />
                                 <Picker
                                     mode="dropdown"
-                                    iosHeader="請選擇區域"
+                                    iosHeader="請選擇時間"
                                     iosIcon={<Icon name="ios-arrow-down-outline"/>}
                                     style={{width: undefined}}
                                     selectedValue={this.state.selected1}
                                     onValueChange={this.onValueChange.bind(this)}
                                 >
                                     <Item2 label="請選擇區域" value="key0"/>
-                                    <Item2 label="香港島" value="key1"/>
-                                    <Item2 label="九龍" value="key2"/>
-                                    <Item2 label="新界" value="key3"/>
-
+                                    <Item2 label="10:00 - 14:00" value="key1"/>
+                                    <Item2 label="14:00 - 17:00" value="key2"/>
                                 </Picker>
-                            </Col>
-
-                            <Col>
-                                <Picker
-                                    mode="dialog"
-                                    iosHeader="請選擇地區"
-                                    iosIcon={<Icon name="ios-arrow-down-outline"/>}
-                                    style={{width: undefined}}
-                                    selectedValue={this.state.selected2}
-                                    onValueChange={this.onValueChange2.bind(this)}
-                                >
-                                    <Item label="請選擇地區" value="key0"/>
-                                    <Item label="ATM Card" value="key1"/>
-                                    <Item label="Debit Card" value="key2"/>
-                                    <Item label="Credit Card" value="key3"/>
-                                    <Item label="Net Banking" value="key4"/>
-                                </Picker>
-                            </Col>
+                            </Form>
 
                         </View>
                     </Grid>
@@ -242,10 +302,10 @@ const styles = StyleSheet.create({
         borderColor: "#8F9294",
         borderWidth: 1,
         borderRadius: 5,
-        height:40,
-        marginTop:10,
+        height: 40,
+        marginTop: 10,
 
-        marginBottom:10,
+        marginBottom: 10,
     },
 
 })

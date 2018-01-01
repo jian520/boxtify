@@ -4,29 +4,32 @@ import {StackNavigator, DrawerNavigator} from "react-navigation";
 
 import SideBar from "./screens/sidebar";
 import Login from "./screens/login/";
+import Register from "./screens/login/register";
+import MyService from "./screens/service/myService";
 import About from "./screens/about/";
 import FAQ from "./screens/faq/";
 
 import ServiceStepOne from "./screens/service/stepOne";
 import ServiceStepTwo from "./screens/service/stepTwo";
 import ServiceStepThree from "./screens/service/stepThree";
+import ServiceStepFour from "./screens/service/stepFour";
 
 
 
 const Drawer = DrawerNavigator(
     {
         Home: {screen: Login},
-
+        ServiceStepOne: {screen: ServiceStepOne},
+        MyService: {screen: MyService},
         About: {screen: About},
         FAQ: {screen: FAQ},
-        ServiceStepOne: {screen: ServiceStepOne},
-        ServiceStepTwo: {screen: ServiceStepTwo},
-        ServiceStepThree: {screen: ServiceStepThree},
+
+
 
 
     },
     {
-        initialRouteName: "ServiceStepThree",
+        initialRouteName: "Home",
         contentOptions: {
             activeTintColor: "#e91e63"
         },
@@ -37,7 +40,12 @@ const Drawer = DrawerNavigator(
 const AppNavigator = StackNavigator(
     {
         Drawer: {screen: Drawer},
+        Register: {screen: Register},
         ServiceStepTwo: {screen: ServiceStepTwo},
+        ServiceStepThree: {screen: ServiceStepThree},
+        ServiceStepFour: {screen: ServiceStepFour},
+
+
     },
     {
         initialRouteName: "Drawer",

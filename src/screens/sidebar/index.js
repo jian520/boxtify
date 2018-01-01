@@ -24,13 +24,13 @@ import styles from "./style";
 const datas = [
 	{
 		name: "預約服務",
-		route: "Service",
+		route: "ServiceStepOne",
 		icon: "phone-portrait",
 		bg: "#C5F442",
 	},
 	{
 		name: "我的預約",
-		route: "Actionsheet",
+		route: "MyService",
 		icon: "easel",
 		bg: "#C5F442",
 	},

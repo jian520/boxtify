@@ -31,7 +31,7 @@ export default class StepOne extends Component {
                     <Title>請選擇類別</Title>
                     </Body>
                     <Right>
-                        <Button transparent onPress={() => alert('abc')}>
+                        <Button transparent onPress={() =>  this.props.navigation.navigate("ServiceStepThree")}>
                             <Title>下一步</Title>
                         </Button>
                     </Right>

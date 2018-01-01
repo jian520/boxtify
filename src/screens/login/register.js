@@ -20,7 +20,7 @@ import {
 import styles from "./styles";
 
 
-class Login extends Component {
+export default class Register extends Component {
     static propTypes = {
         // setUser: React.PropTypes.func
     };
@@ -37,7 +37,7 @@ class Login extends Component {
     render() {
         return (
             <Container>
-                <StatusBar barStyle={'light-content'} />
+                <StatusBar barStyle="light-content"/>
                 <View style={styles.container}>
                     <Header>
                         <Left>
@@ -49,31 +49,40 @@ class Login extends Component {
                             </Button>
                         </Left>
                         <Body>
-                        <Title  >登錄</Title>
+                        <Title  >註冊</Title>
                         </Body>
                         <Right/>
 
                     </Header>
 
                     <Content>
-                        <Image source={require("../../../assets/login1.png")} style={styles.shadow}/>
-                        <Image source={require("../../../assets/login2.png")} style={styles.shadow}/>
-
 
                         <Form
                             style={styles.form}
                         >
                             <View style={styles.item}>
                                 <Item>
-                                    <Icon active name={"person"}/>
-                                    <Input placeholder={"帳號"}/>
+
+                                    <Input placeholder={"姓名"}/>
 
                                 </Item>
                             </View>
                             <View style={styles.item}>
                                 <Item fixedLabel>
-                                    <Icon active name={"unlock"}/>
+
+                                    <Input placeholder={"電郵地址"}/>
+                                </Item>
+                            </View>
+                            <View style={styles.item}>
+                                <Item fixedLabel>
+
                                     <Input placeholder={"密碼"}/>
+                                </Item>
+                            </View>
+                            <View style={styles.item}>
+                                <Item fixedLabel>
+
+                                    <Input placeholder={"確認密碼"}/>
                                 </Item>
                             </View>
 
@@ -81,16 +90,11 @@ class Login extends Component {
 
                         <Button block
                                 style={styles.btn}
-                                onPress={() => this.props.navigation.navigate("Home")}
+                                onPress={() => this.props.navigation.navigate("Login")}
                         >
-                            <Text>登錄</Text>
+                            <Text>註冊</Text>
                         </Button>
-                        <Button bordered light
-                                style={styles.btnReg}
-                                onPress={() => this.props.navigation.navigate("Register")}
-                        >
-                            <Text style={styles.txt}>註冊</Text>
-                        </Button>
+
 
                     </Content>
                 </View>
@@ -100,5 +104,3 @@ class Login extends Component {
 
 
 }
-
-export default Login;

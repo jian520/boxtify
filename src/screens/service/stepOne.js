@@ -27,9 +27,13 @@ export default class StepOne extends Component {
                         </Button>
                     </Left>
                     <Body>
-                    <H2 style={styles.title}>請選擇服務</H2>
+                    <Title>請選擇服務</Title>
                     </Body>
-                    <Right/>
+                    <Right>
+                        <Button transparent onPress={() => this.props.navigation.navigate("ServiceStepTwo")}>
+                            <Title>下一步</Title>
+                        </Button>
+                    </Right>
                 </Header>
                 <View style={{height: 40, backgroundColor: "#2EB5AC"}}>
                     <Image source={require("../../../assets/serviceheader1.png")}
