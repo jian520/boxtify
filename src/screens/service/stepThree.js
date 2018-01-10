@@ -10,33 +10,70 @@ import {
     Icon,
     Left,
     Right,
-    Body, Text, H2, View, H3, Form, Item, Input, Picker,
+    Body, Text, H2, View, H3, Form, Item, Input,
 } from "native-base";
 import {Grid, Row, Col} from "react-native-easy-grid";
+import Picker from 'react-native-picker';
+import area from '../../../src/area';
 
-const Item2 = Picker.Item;
+
+
 export default class StepOne extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            selected1: "key0",
-            selected2: "key0"
+            selected: "請選擇區域",
+
         };
     }
 
     onValueChange(value: string) {
         this.setState({
-            selected1: value
+            selected: value
         });
     }
 
-    onValueChange2(value: string) {
-        this.setState({
-            selected2: value
 
+    createAreaData() {
+        let data = [];
+        let len = area.length;
+        for (let i = 0; i < len; i++) {
+            let city = [];
+            for (let j = 0, cityLen = area[i]['city'].length; j < cityLen; j++) {
+                let _city = {};
+                _city[area[i]['city'][j]['name']] = area[i]['city'][j]['area'];
+                city.push(_city);
+            }
 
+            let _data = {};
+            _data[area[i]['name']] = city;
+            data.push(_data);
+        }
+        return data;
+    }
+
+    showAreaPicker() {
+        Picker.init({
+            pickerData: this.createAreaData(),
+            pickerConfirmBtnText: "確定",
+            pickerTitleText: "請選擇區域",
+            pickerCancelBtnText: "取消",
+            onPickerConfirm: pickedValue => {
+                console.log('area', pickedValue[0] + " " + pickedValue[1] );
+
+                this.onValueChange(pickedValue[0] + " " + pickedValue[1]);
+
+            },
+            onPickerCancel: pickedValue => {
+                console.log('area', pickedValue);
+            },
+            onPickerSelect: pickedValue => {
+                //Picker.select(['山东', '青岛', '黄岛区'])
+                console.log('area', pickedValue);
+            }
         });
+        Picker.show();
     }
 
     render() {
@@ -158,7 +195,7 @@ export default class StepOne extends Component {
                         </Row>
 
                         <View style={{
-                            borderWidth: 1, borderColor: "#999999",
+                            // borderWidth: 1, borderColor: "#999999",
                             marginLeft: 30,
                             marginRight: 30, marginBottom: 20,
                         }}>
@@ -178,38 +215,13 @@ export default class StepOne extends Component {
 
 
                             <Col>
-                                <Picker
-                                    mode="dropdown"
-                                    iosHeader="請選擇區域"
-                                    iosIcon={<Icon name="ios-arrow-down-outline"/>}
-                                    style={{width: undefined}}
-                                    selectedValue={this.state.selected1}
-                                    onValueChange={this.onValueChange.bind(this)}
-                                >
-                                    <Item2 label="請選擇區域" value="key0"/>
-                                    <Item2 label="香港島" value="key1"/>
-                                    <Item2 label="九龍" value="key2"/>
-                                    <Item2 label="新界" value="key3"/>
+                                <Button   onPress={() => this.showAreaPicker()}>
+                                    <Title>{this.state.selected}</Title>
+                                </Button>
 
-                                </Picker>
                             </Col>
 
-                            <Col>
-                                <Picker
-                                    mode="dialog"
-                                    iosHeader="請選擇地區"
-                                    iosIcon={<Icon name="ios-arrow-down-outline"/>}
-                                    style={{width: undefined}}
-                                    selectedValue={this.state.selected2}
-                                    onValueChange={this.onValueChange2.bind(this)}
-                                >
-                                    <Item label="請選擇地區" value="key0"/>
-                                    <Item label="ATM Card" value="key1"/>
-                                    <Item label="Debit Card" value="key2"/>
-                                    <Item label="Credit Card" value="key3"/>
-                                    <Item label="Net Banking" value="key4"/>
-                                </Picker>
-                            </Col>
+
 
                         </View>
                     </Grid>

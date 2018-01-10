@@ -10,10 +10,11 @@ import {
     Icon,
     Left,
     Right,
-    Body, Text, H2, View, H3, Form, Item, Input, Picker, CheckBox, ListItem,
+    Body, Text, H2, View, H3, Form, Item, Input, CheckBox, ListItem,
 } from "native-base";
 import {Grid, Row, Col} from "react-native-easy-grid";
-const Item2 = Picker.Item;
+import Picker from 'react-native-picker';
+
 export default class StepOne extends Component {
     constructor(props) {
         super(props);
@@ -23,6 +24,7 @@ export default class StepOne extends Component {
             checkbox3: false,
             checkbox4: false,
             //date:"2016-05-15"
+            selectTime: "請選擇時間",
         };
     }
 
@@ -52,10 +54,34 @@ export default class StepOne extends Component {
         });
     }
 
+
     onValueChange(value: string) {
         this.setState({
-            selected1: value
+            selectTime: value
         });
+    }
+
+    showPicker() {
+        Picker.init({
+            pickerData: ["10:00 - 14:00", "14:00 - 17:00"],
+            pickerConfirmBtnText: "確定",
+            pickerTitleText: "請選擇時間",
+            pickerCancelBtnText: "取消",
+            onPickerConfirm: pickedValue => {
+                console.log('area', pickedValue[0]  );
+
+                this.onValueChange(pickedValue[0] );
+
+            },
+            onPickerCancel: pickedValue => {
+                console.log('area', pickedValue);
+            },
+            onPickerSelect: pickedValue => {
+                //Picker.select(['山东', '青岛', '黄岛区'])
+                console.log('area', pickedValue);
+            }
+        });
+        Picker.show();
     }
 
 
@@ -234,7 +260,7 @@ export default class StepOne extends Component {
                             <Form>
                                 <Text style={{color: "#2EB5AC"}}>收取物品並存倉</Text>
                                 <DatePicker
-                                    style={{width: 200}}
+                                    style={{width: 100}}
                                     date={this.state.date}
                                     mode="date"
                                     placeholder="請選擇日子"
@@ -243,6 +269,7 @@ export default class StepOne extends Component {
                                     // maxDate="2016-06-01"
                                     confirmBtnText="Confirm"
                                     cancelBtnText="Cancel"
+                                    
                                     customStyles={{
                                         dateIcon: {
                                             position: 'absolute',
@@ -257,18 +284,24 @@ export default class StepOne extends Component {
                                     }}
                                     onDateChange={(date) => {this.setState({date: date})}}
                                 />
-                                <Picker
-                                    mode="dropdown"
-                                    iosHeader="請選擇時間"
-                                    iosIcon={<Icon name="ios-arrow-down-outline"/>}
-                                    style={{width: undefined}}
-                                    selectedValue={this.state.selected1}
-                                    onValueChange={this.onValueChange.bind(this)}
-                                >
-                                    <Item2 label="請選擇區域" value="key0"/>
-                                    <Item2 label="10:00 - 14:00" value="key1"/>
-                                    <Item2 label="14:00 - 17:00" value="key2"/>
-                                </Picker>
+
+                                <Button   onPress={() => this.showPicker()}>
+                                    <Title>{this.state.selectTime}</Title>
+                                </Button>
+
+
+                                {/*<Picker*/}
+                                    {/*mode="dropdown"*/}
+                                    {/*iosHeader="請選擇時間"*/}
+                                    {/*iosIcon={<Icon name="ios-arrow-down-outline"/>}*/}
+                                    {/*style={{width: undefined}}*/}
+                                    {/*selectedValue={this.state.selected1}*/}
+                                    {/*onValueChange={this.onValueChange.bind(this)}*/}
+                                {/*>*/}
+                                    {/*<Item2 label="請選擇區域" value="key0"/>*/}
+                                    {/*<Item2 label="10:00 - 14:00" value="key1"/>*/}
+                                    {/*<Item2 label="14:00 - 17:00" value="key2"/>*/}
+                                {/*</Picker>*/}
                             </Form>
 
                         </View>
