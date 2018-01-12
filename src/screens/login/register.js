@@ -43,9 +43,9 @@ export default class Register extends Component {
                         <Left>
                             <Button
                                 transparent
-                                onPress={() => this.props.navigation.navigate("DrawerOpen")}
+                                onPress={() => this.props.navigation.goBack()}
                             >
-                                <Icon name="menu" style={{color: "#fff"}}/>
+                                <Title>返回</Title>
                             </Button>
                         </Left>
                         <Body>

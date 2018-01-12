@@ -269,7 +269,7 @@ export default class StepOne extends Component {
                                     // maxDate="2016-06-01"
                                     confirmBtnText="Confirm"
                                     cancelBtnText="Cancel"
-                                    
+
                                     customStyles={{
                                         dateIcon: {
                                             position: 'absolute',
