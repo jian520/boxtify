@@ -134,7 +134,7 @@ class Home extends Component {
                             <Text style={styles.sectionHorizontal2}>倉庫配備完善溫度、濕度控制、防蟲</Text>
 
                             <Image
-                                style={styles.iconSectionImg}
+                                style={styles.iconSectionImg} 
                                 source={puzzle}
                             />
                             <H1 style={styles.sectionHorizontal1}>不設室內間隔</H1>
