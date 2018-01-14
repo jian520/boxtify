@@ -3,13 +3,16 @@ import {Root} from "native-base";
 import {StackNavigator, DrawerNavigator} from "react-navigation";
 
 import SideBar from "./screens/sidebar";
+import Home from "./screens/home";
 import Login from "./screens/login/";
 import Register from "./screens/login/register";
-import MyService from "./screens/service/myService";
+import OrderList from "./screens/order";
+import OrderDetail from "./screens/order/orderDetail";
+
 import About from "./screens/about/";
 import FAQ from "./screens/faq/";
 
-import ServiceStepOne from "./screens/service/stepOne";
+import ServiceStepOne from "./screens/service/index";
 import ServiceStepTwo from "./screens/service/stepTwo";
 import ServiceStepThree from "./screens/service/stepThree";
 import ServiceStepFour from "./screens/service/stepFour";
@@ -18,9 +21,10 @@ import ServiceStepFour from "./screens/service/stepFour";
 
 const Drawer = DrawerNavigator(
     {
-        Home: {screen: Login},
+        Home: {screen: Home},
         ServiceStepOne: {screen: ServiceStepOne},
-        MyService: {screen: MyService},
+        OrderList: {screen: OrderList},
+
         About: {screen: About},
         FAQ: {screen: FAQ},
 
@@ -44,7 +48,7 @@ const AppNavigator = StackNavigator(
         ServiceStepTwo: {screen: ServiceStepTwo},
         ServiceStepThree: {screen: ServiceStepThree},
         ServiceStepFour: {screen: ServiceStepFour},
-
+        OrderDetail: {screen: OrderDetail},
 
     },
     {

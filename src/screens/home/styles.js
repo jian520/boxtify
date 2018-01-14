@@ -1,30 +1,65 @@
 const React = require("react-native");
 
-const { StyleSheet, Dimensions, Platform } = React;
+const {StyleSheet, Dimensions, Platform} = React;
 
 const deviceHeight = Dimensions.get("window").height;
 
 export default {
-  imageContainer: {
-    flex: 1,
-    width: null,
-    height: null
-  },
-  logoContainer: {
-    flex: 1,
-    marginTop: deviceHeight / 8,
-    marginBottom: 30
-  },
-  logo: {
-    position: "absolute",
-    left: Platform.OS === "android" ? 40 : 50,
-    top: Platform.OS === "android" ? 35 : 60,
-    width: 280,
-    height: 100
-  },
-  text: {
-    color: "#D8D8D8",
-    bottom: 6,
-    marginTop: 5
-  }
+    homeSection: {
+        paddingBottom: 60,
+    },
+    homeSectionTitle: {
+        paddingTop: 30,
+        paddingBottom: 30,
+    },
+    iconSectionDesc: {
+        marginTop: 30,
+        marginBottom: 20,
+    },
+    iconSectionImg: {
+        resizeMode: "cover",
+        height: 100,
+        width: 100,
+
+    },
+
+    section2: {
+        backgroundColor: "#4FC3F7",
+
+        alignSelf: "center",
+    },
+    section3: {
+        backgroundColor: "#818f9a",
+
+        alignSelf: "center",
+    },
+    section4: {
+        backgroundColor: "#23b5ad",
+
+        alignSelf: "center",
+    },
+
+
+
+    sectionWhiteTitle: {
+        color: "#FFF",
+        paddingTop: 30,
+        paddingBottom: 30,
+    },
+    sectionWhiteDesc: {
+        color: "#FFF",
+        marginTop: 30,
+        marginBottom: 20,
+    },
+    sectionHorizontal1: {
+        color: "#FFF",
+        paddingTop: 27,
+    },
+    sectionHorizontal2: {
+        color: "#FFF",
+        paddingTop: 10,
+        paddingBottom: 10,
+    }
+
+
 };

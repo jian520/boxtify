@@ -30,7 +30,7 @@ const datas = [
 	},
 	{
 		name: "我的預約",
-		route: "MyService",
+		route: "OrderList",
 		icon: "easel",
 		bg: "#C5F442",
 	},
@@ -40,13 +40,28 @@ const datas = [
 		icon: "phone-portrait",
 
 	},
+    {
+        name: "收費表",
+        route: "Price",
+        icon: "phone-portrait",
+
+    },
+    {
+        name: "常見問題",
+        route: "FAQ",
+        icon: "phone-portrait",
+        bg: "#DA4437",
+        types: "4",
+    },
 	{
-		name: "常見問題",
-		route: "FAQ",
-		icon: "phone-portrait",
-		bg: "#DA4437",
-		types: "4",
-	},
+        name: "條款及細則",
+        route: "terms",
+        icon: "phone-portrait",
+        bg: "#DA4437",
+        types: "4",
+    },
+
+
     {
         name: "分享給朋友",
         route: "Footer",
@@ -80,12 +95,9 @@ class SideBar extends Component {
 							<ListItem style={{   backgroundColor: "#2EB5AC"   }}
 								  noBorder onPress={() => this.props.navigation.navigate(data.route)}>
 
-
 									<Text style={styles.text}>
 										{data.name}
 									</Text>
-
-
 
 							</ListItem>}
 					/>
