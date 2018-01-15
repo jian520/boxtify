@@ -20,7 +20,8 @@ class NHListDivider extends Component {
             <Container style={styles.container}>
                 <Header>
                     <Left>
-                        <Button transparent onPress={() => this.props.navigation.goBack()}>
+                        <Button transparent   onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+
 
                             <Icon name="menu" style={{color: "#fff"}}/>
                         </Button>

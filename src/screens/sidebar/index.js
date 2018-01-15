@@ -1,45 +1,47 @@
-import React, { Component } from "react";
-import {   Image } from "react-native";
+import React, {Component} from "react";
+import {Image} from "react-native";
 
 import {
 
-	Content,
-	Text,
-	List,
-	ListItem,
-	Icon,
-	Container,
-	Left,
-	Right,
-	Badge,
-	Button,
-	View,
-	StyleProvider,
-	getTheme,
-	variables,
+    Content,
+    Text,
+    List,
+    ListItem,
+    Icon,
+    Container,
+    Left,
+    Right,
+    Badge,
+    Button,
+    View,
+    StyleProvider,
+    getTheme,
+    variables,
 } from "native-base";
+import {Grid, Col} from "react-native-easy-grid";
+
 
 import styles from "./style";
 
 const datas = [
-	{
-		name: "預約服務",
-		route: "ServiceStepOne",
-		icon: "phone-portrait",
-		bg: "#C5F442",
-	},
-	{
-		name: "我的預約",
-		route: "OrderList",
-		icon: "easel",
-		bg: "#C5F442",
-	},
-	{
-		name: "關於我們",
-		route: "About",
-		icon: "phone-portrait",
+    {
+        name: "預約服務",
+        route: "ServiceStepOne",
+        icon: "phone-portrait",
+        bg: "#C5F442",
+    },
+    {
+        name: "我的預約",
+        route: "OrderList",
+        icon: "easel",
+        bg: "#C5F442",
+    },
+    {
+        name: "關於我們",
+        route: "About",
+        icon: "phone-portrait",
 
-	},
+    },
     {
         name: "收費表",
         route: "Price",
@@ -53,7 +55,7 @@ const datas = [
         bg: "#DA4437",
         types: "4",
     },
-	{
+    {
         name: "條款及細則",
         route: "terms",
         icon: "phone-portrait",
@@ -73,38 +75,67 @@ const datas = [
 ];
 
 class SideBar extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			shadowOffsetWidth: 1,
-			shadowRadius: 4,
-		};
-	}
+    constructor(props) {
+        super(props);
+        this.state = {
+            shadowOffsetWidth: 1,
+            shadowRadius: 4,
+        };
+    }
 
-	render() {
-		return (
+    render() {
+        return (
 
-			<Container>
-				<Content bounces={false} style={{ flex: 1, backgroundColor: "#fff"  }}>
-					<View style={styles.drawerCover}>
-						<Image square style={styles.drawerImage} source={require("../../../assets/login1.png")} />
-					</View>
-					<List style={styles.list}
-						dataArray={datas}
-						renderRow={data =>
-							<ListItem style={{   backgroundColor: "#2EB5AC"   }}
-								  noBorder onPress={() => this.props.navigation.navigate(data.route)}>
+            <Container>
+                <Content bounces={false} style={{flex: 1, backgroundColor: "#fff"}}>
+                    <View style={styles.drawerCover}>
+                        <Image square style={styles.drawerImage} source={require("../../../assets/login1.png")}/>
 
-									<Text style={styles.text}>
-										{data.name}
-									</Text>
 
-							</ListItem>}
-					/>
-				</Content>
-			</Container>
-		);
-	}
+                        <Grid style={styles.grid}>
+
+                            <Col size={1}>
+                                <Button transparent  onPress={() => this.props.navigation.navigate("Login")}>
+                                    <Text>登入</Text>
+                                </Button>
+                            </Col>
+                            <Col size={1}>
+                                <Button transparent onPress={() => this.props.navigation.navigate("Register")}>
+                                    <Text>註冊</Text>
+                                </Button>
+                            </Col>
+                            <Col size={2}>
+                                <Button iconLeft transparent>
+                                    <Icon active name="beer"/>
+                                    <Text>21750222</Text>
+                                </Button>
+
+                            </Col>
+
+                            {/*<Col>*/}
+                            {/*<Button transparent>*/}
+                            {/*<Text>登出</Text>*/}
+                            {/*</Button>*/}
+                            {/*</Col>*/}
+                        </Grid>
+
+                    </View>
+                    <List style={styles.list}
+                          dataArray={datas}
+                          renderRow={data =>
+                              <ListItem style={{backgroundColor: "#2EB5AC"}}
+                                        noBorder onPress={() => this.props.navigation.navigate(data.route)}>
+
+                                  <Text style={styles.text}>
+                                      {data.name}
+                                  </Text>
+
+                              </ListItem>}
+                    />
+                </Content>
+            </Container>
+        );
+    }
 }
 
 export default SideBar;

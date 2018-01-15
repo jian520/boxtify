@@ -31,7 +31,7 @@ class NHTypography extends Component {
               transparent
               onPress={() => this.props.navigation.navigate("DrawerOpen")}
             >
-              <Icon name="menu" />
+                <Icon name="menu" style={{color: "#fff"}}/>
             </Button>
           </Left>
           <Body>

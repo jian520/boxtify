@@ -45,7 +45,7 @@ export default class Register extends Component {
                                 transparent
                                 onPress={() => this.props.navigation.goBack()}
                             >
-                                <Title>返回</Title>
+                                <Icon name="arrow-back" style={{color:"#FFF"}}/>
                             </Button>
                         </Left>
                         <Body>

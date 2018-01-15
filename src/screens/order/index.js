@@ -39,8 +39,8 @@ export default class OrderList extends Component {
       <Container style={styles.container}>
         <Header>
             <Left>
-                <Button transparent onPress={() => this.props.navigation.goBack()}>
-                    <Icon name="arrow-back" style={{color:"#FFF"}}/>
+                <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+                    <Icon name="menu" style={{color: "#fff"}}/>
                 </Button>
             </Left>
             <Body>

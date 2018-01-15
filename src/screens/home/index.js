@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Image, View, StatusBar, Dimensions} from "react-native";
 
-import {Container, Button, H1, H3, Text, Header, Title, Body, Left, Right, Content, Thumbnail} from "native-base";
+import {Container, Button, Icon, H1, H3, Text, Header, Title, Body, Left, Right, Content, Thumbnail} from "native-base";
 import {Grid, Row} from "react-native-easy-grid";
 
 import styles from "./styles";
@@ -36,7 +36,19 @@ class Home extends Component {
             <Container>
                 <StatusBar barStyle="light-content"/>
 
+                <Header  >
+                    <Left>
+                        <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+                            <Icon name="menu" style={{color: "#fff"}}/>
+                        </Button>
+
+
+                    </Left>
+
+                </Header>
+
                 <Content>
+
                     <Grid>
                         <Row>
                             <Image
@@ -134,7 +146,7 @@ class Home extends Component {
                             <Text style={styles.sectionHorizontal2}>倉庫配備完善溫度、濕度控制、防蟲</Text>
 
                             <Image
-                                style={styles.iconSectionImg} 
+                                style={styles.iconSectionImg}
                                 source={puzzle}
                             />
                             <H1 style={styles.sectionHorizontal1}>不設室內間隔</H1>

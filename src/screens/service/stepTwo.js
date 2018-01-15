@@ -21,7 +21,7 @@ import {
 
 } from "native-base";
 import {Grid, Row, Col} from "react-native-easy-grid";
-
+import Stepper from "../service/stepper";
 const img = require("../../../assets/service_plan_detail.jpeg");
 export default class StepOne extends Component {
     render() {
@@ -59,32 +59,13 @@ export default class StepOne extends Component {
                                 $29 每箱/每月
                             </Text>
                             </Body>
-                            <Right><Body style={{flexDirection: 'row',}}>
-
-                                <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
-                                <H3 style={{color: "#fff"}}>-</H3>
-                                </Button>
-
-
-                                <View style={{
-                                flex: 1,
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                backgroundColor: "#866447"
-                                }}>
-                                <H3 style={{
-
-                                alignSelf: "center",
-                                color: "#fff"
-                                }}>0</H3>
-                                </View>
-
-                                <Button full style={{flex: 1, backgroundColor: "#2EB5AC"}}>
-                                <H3 style={{color: "#fff"}}>+</H3>
-                                </Button>
-                            </Body>
-
+                            <Right>
+                                <Stepper
+                                    onChange={(val) => {Console.log(val)}}
+                                    defaultValue={1}
+                                    min={1}
+                                    max={100}
+                                    step={1} />
 
                             </Right>
                         </CardItem>

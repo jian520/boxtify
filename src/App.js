@@ -22,14 +22,13 @@ import ServiceStepFour from "./screens/service/stepFour";
 const Drawer = DrawerNavigator(
     {
         Home: {screen: Home},
+        Login: {screen: Login},
+
         ServiceStepOne: {screen: ServiceStepOne},
         OrderList: {screen: OrderList},
 
         About: {screen: About},
         FAQ: {screen: FAQ},
-
-
-
 
     },
     {
@@ -44,6 +43,7 @@ const Drawer = DrawerNavigator(
 const AppNavigator = StackNavigator(
     {
         Drawer: {screen: Drawer},
+
         Register: {screen: Register},
         ServiceStepTwo: {screen: ServiceStepTwo},
         ServiceStepThree: {screen: ServiceStepThree},

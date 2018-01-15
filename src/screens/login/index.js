@@ -43,8 +43,7 @@ class Login extends Component {
                         <Left>
                             <Button
                                 transparent
-                                onPress={() => this.props.navigation.navigate("DrawerOpen")}
-                            >
+                                onPress={() => this.props.navigation.navigate("DrawerOpen")}>
                                 <Icon name="menu" style={{color: "#fff"}}/>
                             </Button>
                         </Left>

@@ -29,6 +29,10 @@ export default {
     height: 75,
     resizeMode: "cover"
   },
+    grid: {
+        paddingTop: deviceHeight / 3.5 - 40,
+
+    },
 
     list: {
         backgroundColor: "#2EB5AC",
