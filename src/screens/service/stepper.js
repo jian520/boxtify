@@ -51,7 +51,7 @@ export default class Stepper extends Component {
         return (
             <View style={[styles.container, this.props.style]}>
                 <View style={{flexDirection: 'row', borderColor: '#e1e1e1', borderWidth: 0.5, borderRadius: 4}}>
-                    <Button
+                    <Button style={{ backgroundColor: "#2EB5AC"}}
                         onPress={() => this.decrease()}
                         onLongPress={() => this.longDecrease()}
                         onPressOut={() => this.onTouchEnd()}>
@@ -66,7 +66,7 @@ export default class Stepper extends Component {
                         <Text style={{textAlign: 'center', fontSize: 16, width: 40}}>{this.state.currentNumber}</Text>
                     </View>
 
-                    <Button
+                    <Button style={{ backgroundColor: "#2EB5AC"}}
                         onPress={() => this.increase()}
                         onLongPress={() => this.longIncrease()}
                         onPressOut={() => this.onTouchEnd()}
