@@ -6,16 +6,19 @@ import SideBar from "./screens/sidebar";
 import Home from "./screens/home";
 import Login from "./screens/login/";
 import Register from "./screens/login/register";
-import OrderList from "./screens/order";
-import OrderDetail from "./screens/order/orderDetail";
+import OrderList from "./screens/myorder";
+import OrderDetail from "./screens/myorder/orderDetail";
 
 import About from "./screens/about/";
 import FAQ from "./screens/faq/";
 
-import ServiceStepOne from "./screens/service/index";
-import ServiceStepTwo from "./screens/service/stepTwo";
-import ServiceStepThree from "./screens/service/stepThree";
-import ServiceStepFour from "./screens/service/stepFour";
+import ServiceStepOne from "./screens/order/index";
+import Product from "./screens/order/product";
+import Plan from "./screens/order/plan";
+import Moving from "./screens/order/moving";
+
+import ServiceStepThree from "./screens/order/stepThree";
+import ServiceStepFour from "./screens/order/stepFour";
 
 
 
@@ -45,7 +48,10 @@ const AppNavigator = StackNavigator(
         Drawer: {screen: Drawer},
 
         Register: {screen: Register},
-        ServiceStepTwo: {screen: ServiceStepTwo},
+        Product: {screen: Product},
+        Plan: {screen: Plan},
+        Moving: {screen: Moving},
+
         ServiceStepThree: {screen: ServiceStepThree},
         ServiceStepFour: {screen: ServiceStepFour},
         OrderDetail: {screen: OrderDetail},

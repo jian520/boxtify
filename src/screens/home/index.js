@@ -41,9 +41,12 @@ class Home extends Component {
                         <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
                             <Icon name="menu" style={{color: "#fff"}}/>
                         </Button>
-
-
                     </Left>
+                    <Body>
+                    <Title>Boxtify</Title>
+                    </Body>
+                    <Right/>
+
 
                 </Header>
 

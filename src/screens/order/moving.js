@@ -21,11 +21,25 @@ import {
 
 } from "native-base";
 import {Grid, Row, Col} from "react-native-easy-grid";
-import Stepper from "../service/stepper";
+import Stepper from ".//stepper";
 
 const img = require("../../../assets/service_plan_detail.jpeg");
-export default class StepOne extends Component {
-    render() {
+
+export default class Moving extends Component {
+
+
+constructor(props) {
+    super(props);
+
+    this.state = {
+        shadowOffsetWidth: 1,
+        shadowRadius: 4,
+    };
+}
+
+
+
+render() {
         return (
 
             <Container>
