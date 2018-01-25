@@ -20,7 +20,7 @@ import {
 import styles from "./styles";
 
 
-class Login extends Component {
+export default class Login extends Component {
     static propTypes = {
         // setUser: React.PropTypes.func
     };
@@ -28,9 +28,35 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ""
+            email: "",
+            password: ""
         };
 
+    }
+
+    login() {
+        var email = this.state.email;
+        var password = this.state.password;
+
+        if(!this.isEmail(email)) {
+            alert("請輸入正確的郵件格式");
+            return;
+        }
+
+        if(!this.checkPassword(password)){
+            alert("验证码为4位数字");
+            return;
+        }
+    }
+
+    isEmail(str){
+        var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+        return reg.test(str);
+    }
+
+
+    checkPassword(code){
+        return code&&code.length>4;
     }
 
 
@@ -65,14 +91,14 @@ class Login extends Component {
                             <View style={styles.item}>
                                 <Item>
                                     <Icon active name={"person"}/>
-                                    <Input placeholder={"帳號"}/>
+                                    <Input style={styles.input} placeholder={"電郵地址"} onChangeText={(text) => this.setState({email: text})}/>
 
                                 </Item>
                             </View>
                             <View style={styles.item}>
                                 <Item fixedLabel>
                                     <Icon active name={"unlock"}/>
-                                    <Input placeholder={"密碼"}/>
+                                    <Input  style={styles.input} placeholder={"密碼"} onChangeText={(text) => this.setState({password: text})}/>
                                 </Item>
                             </View>
 
@@ -80,7 +106,7 @@ class Login extends Component {
 
                         <Button block
                                 style={styles.btn}
-                                onPress={() => this.props.navigation.navigate("Home")}
+                                onPress={() => this.login()}
                         >
                             <Text>登錄</Text>
                         </Button>
@@ -100,4 +126,3 @@ class Login extends Component {
 
 }
 
-export default Login;

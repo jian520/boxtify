@@ -30,10 +30,10 @@ export default class Stepper extends Component {
     };
     //默认属性
     static defaultProps = {
-        min: 1, // 默认最小值
+        min: 0, // 默认最小值
         max: 99, // 默认最大值
         step: 1, // 增减数为1
-        defaultValue: 1, // 默认值为1
+        defaultValue: 0, // 默认值为1
     }
 
     //构造函数
@@ -50,20 +50,19 @@ export default class Stepper extends Component {
         console.log('-------', this.props.defaultValue);
         return (
             <View style={[styles.container, this.props.style]}>
-                <View style={{flexDirection: 'row', borderColor: '#e1e1e1', borderWidth: 0.5, borderRadius: 4}}>
+                <View style={{flexDirection: 'row', }}>
                     <Button style={{ backgroundColor: "#2EB5AC"}}
                         onPress={() => this.decrease()}
                         onLongPress={() => this.longDecrease()}
                         onPressOut={() => this.onTouchEnd()}>
                         <Text>－</Text></Button>
                     <View style={{
+                        backgroundColor: "#e9f8f7",
                         alignItems: 'center',
                         justifyContent: 'center',
-                        borderLeftWidth: 0.5,
-                        borderRightWidth: 0.5,
-                        borderColor: '#e1e1e1'
+
                     }}>
-                        <Text style={{textAlign: 'center', fontSize: 16, width: 40}}>{this.state.currentNumber}</Text>
+                        <Text style={{textAlign: 'center', color: "#00c4b4", fontSize: 16, width: 40}}>{this.state.currentNumber}</Text>
                     </View>
 
                     <Button style={{ backgroundColor: "#2EB5AC"}}

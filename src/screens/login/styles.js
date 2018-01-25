@@ -29,7 +29,8 @@ export default {
         bottom: 0,
     },
     input: {
-        marginBottom: 20,
+        // marginBottom: 20,
+        height: 40,
     },
     form: {
         paddingTop: 20,

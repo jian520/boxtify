@@ -1,3 +1,6 @@
+import common from "../../theme/variables/common";
+
+
 export default {
     container: {
         backgroundColor: "#FFF"
@@ -5,19 +8,32 @@ export default {
     title: {
         color: "#FFFFFF"
     },
-    text: {
-        alignSelf: "center",
-        marginBottom: 7
+    headTitle: {
+        lineHeight: 20,
+        marginTop: 10,
+        marginBottom: 10,
+        // alignSelf: 'center',
+        color: common.colorB
     },
+
+
     mb: {
         marginBottom: 15
     },
     h2: {
         alignSelf: 'center',
-        color: "#2EB5AC"
+        color: common.colorA
     },
     text: {
-        color: "#949494",
-        alignSelf: 'center'
+        color: common.colorB,
+        alignSelf: 'center',
+        lineHeight: 20,
     },
+    input: {
+        // borderColor: "#8F9294",
+        // borderWidth: 1,
+        // borderRadius: 5,
+        height: 30,
+    },
+
 };

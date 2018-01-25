@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Image, View, StatusBar, Dimensions} from "react-native";
 
-import {Container, Button, Icon, H1, H3, Text, Header, Title, Body, Left, Right, Content, Thumbnail} from "native-base";
+import {Container, Button, Icon, H1, H3, Text, Header, Title, Body, Left, Right, Content, Thumbnail,Footer,FooterTab} from "native-base";
 import {Grid, Row} from "react-native-easy-grid";
 
 import styles from "./styles";
@@ -36,7 +36,7 @@ class Home extends Component {
             <Container>
                 <StatusBar barStyle="light-content"/>
 
-                <Header  >
+                <Header  style={{    borderBottomWidth:  0}} >
                     <Left>
                         <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
                             <Icon name="menu" style={{color: "#fff"}}/>
@@ -188,6 +188,8 @@ class Home extends Component {
 
                     </Grid>
                 </Content>
+
+
 
             </Container>
         );

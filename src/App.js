@@ -16,9 +16,8 @@ import ServiceStepOne from "./screens/order/index";
 import Product from "./screens/order/product";
 import Plan from "./screens/order/plan";
 import Moving from "./screens/order/moving";
-
-import ServiceStepThree from "./screens/order/stepThree";
-import ServiceStepFour from "./screens/order/stepFour";
+import Schedule from "./screens/order/schedule";
+import Overview from "./screens/order/overview";
 
 
 
@@ -32,7 +31,7 @@ const Drawer = DrawerNavigator(
 
         About: {screen: About},
         FAQ: {screen: FAQ},
-
+        Overview: {screen: Overview},
     },
     {
         initialRouteName: "Home",
@@ -52,8 +51,8 @@ const AppNavigator = StackNavigator(
         Plan: {screen: Plan},
         Moving: {screen: Moving},
 
-        ServiceStepThree: {screen: ServiceStepThree},
-        ServiceStepFour: {screen: ServiceStepFour},
+        Schedule: {screen: Schedule},
+        Overview: {screen: Overview},
         OrderDetail: {screen: OrderDetail},
 
     },
