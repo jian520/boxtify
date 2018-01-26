@@ -18,7 +18,7 @@ import {
 
 
 import styles from "./styles";
-
+import API from "../../network/api";
 
 export default class Login extends Component {
     static propTypes = {
@@ -47,6 +47,18 @@ export default class Login extends Component {
             alert("验证码为4位数字");
             return;
         }
+
+        // fetch(API.LOGIN+"?user_name="+email+"&code="+password+"&type=verifiycode")
+        //     .then((response) => response.json())
+        //     .then((responseData) => {
+        //         console.log(responseData)
+        //         if(responseData.code==0){
+        //             // this._loginSucc(responseData.data);
+        //         }else{
+        //             alert("验证码错误");
+        //         }
+        //     })
+        //     .done();
     }
 
     isEmail(str){
